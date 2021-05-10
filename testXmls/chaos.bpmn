@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1t5dg60" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.3.1">
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1t5dg60" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" xmlns:ifl="http:///com.sap.ifl.model/Ifl.xsd" exporterVersion="8.3.1">
+  <bpmn:collaboration id="Collaboration_1" name="Default Collaboration">
+    <bpmn:participant id="Participant_1" name="Sender" ifl:type="EndpointSender">
+      <bpmn:extensionElements>
+        <ifl:property>
+          <key>enableBasicAuthentication</key>
+          <value>false</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ifl:type</key>
+          <value>EndpointSender</value>
+        </ifl:property>
+      </bpmn:extensionElements>
+    </bpmn:participant>
+  </bpmn:collaboration>
   <bpmn:process id="Process_1dc7dif" isExecutable="false">
     <bpmn:startEvent id="StartEvent_0mhdxmf">
       <bpmn:outgoing>Flow_1le1lnu</bpmn:outgoing>

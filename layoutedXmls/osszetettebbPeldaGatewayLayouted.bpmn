@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI">
+	<bpmn:process id="process" isExecutable="false">
+		<bpmn:startEvent id="start"/>
+		<bpmn:exclusiveGateway id="gateway" name=""/>
+		<bpmn:exclusiveGateway id="gateway1" name=""/>
+		<bpmn:callActivity id="activity" name="process"/>
+		<bpmn:callActivity id="activity1" name="process1"/>
+		<bpmn:callActivity id="activity2" name="process2"/>
+		<bpmn:callActivity id="activity3" name="process3"/>
+		<bpmn:exclusiveGateway id="gateway2" name=""/>
+		<bpmn:serviceTask id="activityService" name="Decide what to do next"/>
+		<bpmn:exclusiveGateway id="gateway3" name="End process?"/>
+		<bpmn:endEvent id="end"/>
+		<bpmn:sequenceFlow id="connector" sourceRef="start" targetRef="gateway"/>
+		<bpmn:sequenceFlow id="connector1" sourceRef="gateway" targetRef="gateway1"/>
+		<bpmn:sequenceFlow id="connector2" sourceRef="gateway1" targetRef="activity"/>
+		<bpmn:sequenceFlow id="connector3" sourceRef="gateway1" targetRef="activity1"/>
+		<bpmn:sequenceFlow id="connector4" sourceRef="gateway1" targetRef="activity2"/>
+		<bpmn:sequenceFlow id="connector5" sourceRef="gateway1" targetRef="activity3"/>
+		<bpmn:sequenceFlow id="connector6" sourceRef="activity" targetRef="gateway2"/>
+		<bpmn:sequenceFlow id="connector7" sourceRef="activity1" targetRef="gateway2"/>
+		<bpmn:sequenceFlow id="connector8" sourceRef="activity2" targetRef="gateway2"/>
+		<bpmn:sequenceFlow id="connector9" sourceRef="activity3" targetRef="gateway2"/>
+		<bpmn:sequenceFlow id="connector10" sourceRef="gateway2" targetRef="activityService"/>
+		<bpmn:sequenceFlow id="connector11" sourceRef="activityService" targetRef="gateway3"/>
+		<bpmn:sequenceFlow id="connector12" name="No" sourceRef="gateway3" targetRef="gateway"/>
+		<bpmn:sequenceFlow id="connector13" name="Yes" sourceRef="gateway3" targetRef="end"/>
+	</bpmn:process>
+	<bpmndi:BPMNDiagram id="BPMNDiagram_1">
+		<bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="process">
+			<bpmndi:BPMNShape id="_BPMNShape_start" bpmnElement="start" isExpanded="false">
+				<dc:Bounds x="52" y="100" width="36" height="36"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNShape id="_BPMNShape_gateway" bpmnElement="gateway" isExpanded="false">
+				<dc:Bounds x="620" y="465.5" width="50" height="50"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector" bpmnElement="connector">
+				<di:waypoint x="52" y="118"/>
+				<di:waypoint x="140" y="117.5"/>
+				<di:waypoint x="260" y="117.5"/>
+				<di:waypoint x="380" y="117.5"/>
+				<di:waypoint x="500" y="117.5"/>
+				<di:waypoint x="645" y="117.5"/>
+				<di:waypoint x="645" y="465.5"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNShape id="_BPMNShape_gateway1" bpmnElement="gateway1" isExpanded="false">
+				<dc:Bounds x="45" y="343.5" width="50" height="50"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector1" bpmnElement="connector1">
+				<di:waypoint x="620" y="491"/>
+				<di:waypoint x="358" y="491"/>
+				<di:waypoint x="358" y="369"/>
+				<di:waypoint x="95" y="369"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNShape id="_BPMNShape_activity" bpmnElement="activity" isExpanded="false">
+				<dc:Bounds x="140" y="178.5" width="100" height="80"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNShape id="_BPMNShape_activity1" bpmnElement="activity1" isExpanded="false">
+				<dc:Bounds x="140" y="278.5" width="100" height="80"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNShape id="_BPMNShape_activity2" bpmnElement="activity2" isExpanded="false">
+				<dc:Bounds x="140" y="378.5" width="100" height="80"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNShape id="_BPMNShape_activity3" bpmnElement="activity3" isExpanded="false">
+				<dc:Bounds x="140" y="478.5" width="100" height="80"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector2" bpmnElement="connector2">
+				<di:waypoint x="95" y="369"/>
+				<di:waypoint x="118" y="369"/>
+				<di:waypoint x="118" y="219"/>
+				<di:waypoint x="140" y="219"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector3" bpmnElement="connector3">
+				<di:waypoint x="95" y="369"/>
+				<di:waypoint x="118" y="369"/>
+				<di:waypoint x="118" y="319"/>
+				<di:waypoint x="140" y="319"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector4" bpmnElement="connector4">
+				<di:waypoint x="95" y="369"/>
+				<di:waypoint x="118" y="369"/>
+				<di:waypoint x="118" y="419"/>
+				<di:waypoint x="140" y="419"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector5" bpmnElement="connector5">
+				<di:waypoint x="95" y="369"/>
+				<di:waypoint x="118" y="369"/>
+				<di:waypoint x="118" y="519"/>
+				<di:waypoint x="140" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNShape id="_BPMNShape_gateway2" bpmnElement="gateway2" isExpanded="false">
+				<dc:Bounds x="285" y="493.5" width="50" height="50"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector6" bpmnElement="connector6">
+				<di:waypoint x="240" y="219"/>
+				<di:waypoint x="263" y="219"/>
+				<di:waypoint x="263" y="519"/>
+				<di:waypoint x="285" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector7" bpmnElement="connector7">
+				<di:waypoint x="240" y="319"/>
+				<di:waypoint x="263" y="319"/>
+				<di:waypoint x="263" y="519"/>
+				<di:waypoint x="285" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector8" bpmnElement="connector8">
+				<di:waypoint x="240" y="419"/>
+				<di:waypoint x="263" y="419"/>
+				<di:waypoint x="263" y="519"/>
+				<di:waypoint x="285" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector9" bpmnElement="connector9">
+				<di:waypoint x="240" y="519"/>
+				<di:waypoint x="285" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNShape id="_BPMNShape_activityService" bpmnElement="activityService" isExpanded="false">
+				<dc:Bounds x="380" y="478.5" width="100" height="80"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector10" bpmnElement="connector10">
+				<di:waypoint x="335" y="519"/>
+				<di:waypoint x="380" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNShape id="_BPMNShape_gateway3" bpmnElement="gateway3" isExpanded="false">
+				<dc:Bounds x="525" y="493.5" width="50" height="50"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector11" bpmnElement="connector11">
+				<di:waypoint x="480" y="519"/>
+				<di:waypoint x="525" y="519"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNShape id="_BPMNShape_end" bpmnElement="end" isExpanded="false">
+				<dc:Bounds x="627" y="535.5" width="36" height="36"/>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector12" bpmnElement="connector12">
+				<di:waypoint x="575" y="519"/>
+				<di:waypoint x="598" y="519"/>
+				<di:waypoint x="598" y="491"/>
+				<di:waypoint x="620" y="491"/>
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="_BPMNConnection_connector13" bpmnElement="connector13">
+				<di:waypoint x="525" y="519"/>
+				<di:waypoint x="645" y="519"/>
+				<di:waypoint x="645" y="535.5"/>
+			</bpmndi:BPMNEdge>
+		</bpmndi:BPMNPlane>
+	</bpmndi:BPMNDiagram>
+</bpmn:definitions>
