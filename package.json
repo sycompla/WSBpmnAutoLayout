@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bpmn-auto-layout": "^0.1.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "min-dash": "^3.7.0"
   }
 }

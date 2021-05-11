@@ -1,9 +1,9 @@
-import AutoLayout from 'bpmn-auto-layout';
+import { AutoLayout } from './lib/AutoLayout.js';
 import fs from 'fs';
 
-async function test(filename) {
+async function test(filename, extension) {
 
-    let diagramXML = fs.readFileSync("./testXmls/" + filename + ".bpmn", "utf-8");
+    let diagramXML = fs.readFileSync("./testXmls/" + filename + "." + extension, "utf-8");
 
     let autoLayout = new AutoLayout();
 
@@ -15,4 +15,4 @@ async function test(filename) {
 
 } // test
 
-test("absoluteChaos");
+test("a", "iflw");
