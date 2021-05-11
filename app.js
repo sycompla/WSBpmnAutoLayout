@@ -7,12 +7,18 @@ async function test(filename, extension) {
 
     let autoLayout = new AutoLayout();
 
-    (async () => {
-        let layoutedDiagramXML = await autoLayout.layoutProcess(diagramXML);
+    try {
 
-        fs.writeFileSync("./layoutedXmls/" + filename + "Layouted.bpmn", layoutedDiagramXML);
-    })();
+        (async () => {
+            let layoutedDiagramXML = await autoLayout.layoutProcess(diagramXML);
+
+            fs.writeFileSync("./layoutedXmls/" + filename + "Layouted.bpmn", layoutedDiagramXML);
+        })();
+
+    } catch (error) {
+        console.log(error);
+    }
 
 } // test
 
-test("a", "iflw");
+test("simpleProcess", "bpmn");
